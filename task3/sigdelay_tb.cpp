@@ -1,6 +1,8 @@
 #include "verilated.h"
 #include "verilated_vcd_c.h"
 #include "Vsigdelay.h"
+#include "Vcounter.h"
+#include "Vram2ports.h"
 
 #include "vbuddy.cpp"     // include vbuddy code
 #define MAX_SIM_CYC 1000000
@@ -30,6 +32,7 @@ int main(int argc, char **argv, char **env) {
   top->rst = 0;
   top->wr = 1;
   top->rd = 1;
+  top->en = 1;
   top->offset = 64;
   
   // intialize variables for analogue output
