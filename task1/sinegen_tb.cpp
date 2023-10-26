@@ -26,7 +26,7 @@ int main(int argc, char **argv, char **env){
     top->clk = 1;
     top->rst = 0;
     top->en = 1;
-    top->incr = 0;
+    top->incr = 1;
 
     // run simulation for many clock cycles
     for(i=0; i<1000000; i++){
