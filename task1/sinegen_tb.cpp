@@ -26,7 +26,7 @@ int main(int argc, char **argv, char **env){
     top->clk = 1;
     top->rst = 0;
     top->en = 1;
-    top->incr = 1;
+    top->incr = 0;
 
     // run simulation for many clock cycles
     for(i=0; i<1000000; i++){
@@ -43,6 +43,7 @@ int main(int argc, char **argv, char **env){
     vbdCycle(i+1);
 
     top->en = vbdFlag();
+    top->incr = vbdValue();
 
     if(Verilated::gotFinish() || (vbdGetkey()=='q'))
          exit(0);
